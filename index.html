@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+	<!-- font awesome -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <script src="http://malsup.github.com/jquery.cycle2.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+
+	<link rel="icon" href="images/logo.png" />
+
+	<title>FunClub</title>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+		body {
+			font-family: IBM Plex Serif; 
+		}
+		h1 {
+			font-family: 'Permanent Marker', cursive;
+		}
+		/* main page */
+		.bg-img {
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			position: relative;
+			height: 600px;
+			width: 100%;
+			max-width: 100%;
+		}
+		.underline {
+	        width: 100px;
+	        height: 2px;
+	        background-color: orangered;
+      	}
+      	/* image slider */
+      	/* Make the image fully responsive */
+		.carousel-inner img {
+		    width: 100%;
+		    height: 100%;
+		}
+		.carousel_text {
+			text-transform: uppercase;
+			font-weight: 600;
+		}
+		/* category */
+		.brand_text {
+			text-align: center; 
+			font-weight: 600;
+		}
+		.card_heading { 
+			font-weight: 600; 
+			text-align: center;
+		}
+		.card_text {
+			text-align: center; 
+			font-family: IBM Plex Serif; 
+			font-size: 20px; 
+			font-weight: 500; 
+			font-style: italic;
+		}
+		.more_btn {
+			float: right;
+			width: 100px;
+			height: 40px;
+			font-size: 18px;
+		}
+		/* about */
+		.about {
+			min-height: 100vh;
+			padding: 50px 0;
+			background-image: url(images/bg1.jpg);
+			background-size: 100%;
+			background-color: #fdfdfd;
+			overflow: hidden;
+			color: #fff;
+		}
+		.about-img {
+			width: 100%;
+			padding: 50px;
+		}
+		.about-text {
+			font-weight: 700;
+			font-size: 20px;
+			padding: 50px; 
+			line-height: 30px; 
+			color: #fff;
+		}
+		/* support */
+		.support {
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: #f1f1f1;
+			background: url(images/bg.jpg) no-repeat left;
+			background-size: 100%;
+			background-color: #fdfdfd;
+			overflow: hidden;
+			padding: 50px 0;
+		}
+		.inner-section {
+			width: 50%;
+			float: right;
+			background-color: #fdfdfd;
+			padding: 80px;
+			box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.3);
+		}
+		.inner-section h1 {
+			margin-bottom: 30px;
+			font-size: 40px;
+			font-weight: 900;
+			text-align: center;
+			font-family: 'Permanent Marker', cursive;
+		}
+		.text {
+			font-size: 18px;
+			color: #545454;
+			line-height: 30px;
+			text-align: center;
+			margin-bottom: 40px;
+			font-family: 'Permanent Marker', cursive;
+		}
+		@media screen and (max-width: 1200px) {
+			.inner-section {
+				padding: 30px;
+			}
+		}
+		@media screen and (max-width: 1000px) {
+			.support {
+				background-size: auto;
+				padding: 80px 40px;
+			}
+			.inner-section {
+				max-width: 100%;
+			}
+		}
+		@media screen and (max-width: 600px) {
+			.support {
+				background-size: auto;
+				padding: 20px 20px;
+			}
+			.inner-section {
+				width: 100%;
+				padding: 80px;
+			}
+		}
+		/* our team */
+		.team {
+			padding: 50px;
+		}
+		.our-team {
+			text-align: center;
+			font-size: 40px;
+			font-weight: 900;
+		}
+		.member-image {
+			box-shadow: inset -6px 6px 16px #bcbcbc,
+            			inset 6px -6px 16px #fefefe;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-size: cover;
+            object-fit: cover;
+            border: 1px solid #fefefe;
+		}
+		.member-image.m1 {
+			background-image: url('images/devyani.jpg');
+		}
+		.member-image.m2 {
+			background-image: url('images/sakshi.jpg');
+		}
+		.member-image.m3 {
+			background-image: url('images/rutuja.jpg');
+		}
+		.member-image.m4 {
+			background-image: url('images/pooja.jpg');
+		}
+		.name {
+			font-family: 'Permanent Marker', cursive; 
+			font-weight: 900;
+			color: #dc2054;
+		}
+		.position {
+			font-family: 'Permanent Marker', cursive; 
+			font-weight: 900;
+		}
+		.social-icons a {
+			transition: 0.3s all;
+			font-size: 20px;
+			color: black;
+		}
+		.social-icons a:hover {
+			color: #dc2054;
+		}
+		/* social media icons */
+		.icon i {
+	    	color: #fff;
+	    	font-size: 30px;
+	    	margin: 10px;
+	    	padding-top: 10px;
+	    }
+	    /* help button */
+	    .open-button {
+		    background-color: #fff;
+		    color: #000;
+		    padding: 16px 20px;
+		    border: none;
+		    cursor: pointer;
+		    opacity: 0.8;
+		    position: fixed;		    
+		    bottom: 23px;
+		    right: 28px;
+		    width: 100px;
+		    height: 55px;
+		    border-radius: 20%;
+		  }
+		  /* The popup form - hidden by default */
+		  .form-popup {
+		    display: none;
+		    position: fixed;
+		    bottom: 0;
+		    right: 15px;
+		    border: 3px solid #f1f1f1;
+		    z-index: 9;
+		  }
+		  /* Add styles to the form container */
+		  .form-container {
+		    max-width: 300px;
+		    padding: 10px;
+		    background-color:  white;
+		   	height: 300px;
+		  }
+		  /* Full-width input fields */
+		  .form-container input[type=text]{
+		    width: 100%;
+		    padding: 15px;
+		    margin: 5px 0 22px 0;
+		    border: 2;
+		    border-bottom: 2;
+		    background: #f1f1f1;
+		    border-radius: 4px;
+		  }
+		  /* When the inputs get focus, do something */
+		  .form-container input[type=text]:focus {
+		    background-color: #ddd;
+		    outline: none;
+		  }
+		  .heading {
+		  	font-family: 'Bree Serif',Serif;
+		  	font-weight: 600;
+		  	text-align: center;
+		  	text-transform: uppercase;
+		    color: black;
+		    font-size: 25px;
+		    margin-top: 30px;
+		  }
+		  #helpBtn{
+		    color: #000;
+		    font-size: 20px;
+		    font-weight: bold;
+		    width: 100px;
+		  }
+		  /* Add some hover effects to buttons */
+		  .form-container .btn:hover, .open-button:hover {
+		    opacity: 1;
+		}
+	</style>
+</head>
+<body>
+
+	<!-- nav bar -->
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	  	<a class="navbar-brand" href="#">FUNCLUB</a>
+	  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+	    	<span class="navbar-toggler-icon"></span>
+	  	</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		    <ul class="navbar-nav">
+		      	<li class="nav-item active"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link"><i class="fas fa-info"></i> About Us</a></li>
+                <li class="nav-item"><a href="#category" class="nav-link"><i class="fas fa-list"></i> Category</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link"><i class="far fa-address-card"></i> Contact Us</a></li>  
+		    </ul>
+		</div>  
+	</nav>
+
+	<!-- main page -->
+	<div class="" style="">
+	  	<img src="images/index.jpg" class="bg-img">
+	</div>
+
+	<!-- image slider -->
+	<div id="demo" class="carousel slide" data-ride="carousel">
+		<ul class="carousel-indicators">
+		   <li data-target="#demo" data-slide-to="0" class="active"></li>
+		   <li data-target="#demo" data-slide-to="1"></li>
+		   <li data-target="#demo" data-slide-to="2"></li>
+		</ul>
+	  	<div class="carousel-inner">
+	    	<div class="carousel-item active">
+	      		<img src="images/photo.jpeg" alt="Los Angeles" width="1100" height="500">
+	      		<div class="carousel-caption">
+			       	<h1 class="d-none d-sm-block carousel_text">Photography </h1>
+		            <p class="d-none d-sm-block">"Photography is way of feeling , touching what you have caught on flim is capture forever..... "</p>
+	      		</div>   
+	    	</div>
+	    	<div class="carousel-item">
+	      		<img src="images/sketch.jpg" alt="Chicago" width="1100" height="500">
+	      		<div class="carousel-caption">
+			        <h1 class="d-none d-sm-block carousel_text" style="color: #000;">Sketching</h1>
+		            <p class="d-none d-sm-block" style="color: black;">"Sketching is the painter's denbty, his style, combination and then color is jist a gift to the drawing.</p>
+	      		</div>   
+	    	</div>
+	    	<div class="carousel-item">
+	      		<img src="images/dancingbg.jpg" alt="New York" width="1100" height="500">
+	      		<div class="carousel-caption">
+			        <h1 class="d-none d-sm-block carousel_text" style="color: #000;">Dancing</h1>
+		            <p style="color: #000;" class="d-none d-sm-block">"Dance is the hidden language of the soul." </p>
+	      		</div>   
+	    	</div>
+	  	</div>
+		<a class="carousel-control-prev" href="#demo" data-slide="prev">
+		    <span class="carousel-control-prev-icon"></span>
+		  </a>
+		<a class="carousel-control-next" href="#demo" data-slide="next">
+		    <span class="carousel-control-next-icon"></span>
+		  </a>
+	</div>
+
+	<!-- category -->
+	<section id="gallery" class="card" style="padding: 6px;">
+		<div class="container card-body" id="category">
+			<h1 class="wow bounceInRight brand_text">BRAND INNOVATIONS</h1>
+			<div class="row">
+				<div class="col-lg-4 mb-3 pt-4">
+					<div class="card">
+						<div class="inner">
+							<a href="category.html"><img src="images/dance1.jpg" class="card-img-top" alt="Dancing" style="height: 300px"></a>
+						</div>
+						<div class="card-body">
+							<h5 class="card-title wow flipInX card_heading"> DANCING</h5>
+							<p class="card_text wow flipInX">"Dance is an art, paint your dream and follwo it!!"</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 mb-3 pt-4">
+					<div class="card">
+						<div class="inner">
+							<a href="category.html"> <img src="images/photo1.jpg" class="card-img-top" alt="Photography" style="height: 300px"></a>
+						</div>
+						<div class="card-body">
+							<h5 class="card-title wow flipInX card_heading">PHOTOGRAPHY</h5>
+							<p class="CARD-TEXT wow flipInX card_text">"I didn't choose photography, photography choose me!!"</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 mb-3 pt-4">
+					<div class="card">
+						<div class="inner">
+							<a href="category.html"><img src="images/paint.jpg" class="card-img-top" alt="painting" style="height: 300px"></a>
+						</div>
+						<div class="card-body">
+							<h5 class="card-title wow flipInX card_heading">PAINTING</h5>
+							<p class="card_text wow flipInX">"Painting is another way of keeping a diary.."</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button type="button" class="more_btn wow fadeInLeft btn btn-warning btn-sm ml-auto" data-dismiss="modal" onclick="opencategory()">  More!!</button>
+		</div>
+	</section>
+	
+	<script type="text/javascript">
+		function opencategory(){
+			window.open("category.html");
+		}
+	</script>
+
+	<!-- support -->
+	<div class="support">
+		<div class="inner-section">
+			<h1 class="wow bounceInRight">SUPPORT</h1>
+			<center><div class="underline" style="width: 100px;"></div></center><br>
+			<p class="text">"It is better to be supportive than be superior."<br>"When everything you think is impossible, <br> there was your first step had taken."<br> More forward with positivity...<br>Everything happen for reason..</p>
+		</div>
+	</div>
+
+	<!-- about us -->
+	<div class="about">
+		<h1 class="wow bounceInRight brand_text">ABOUT US</h1>
+		<center><div class="underline" style="width: 100px;"></div></center><br>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<img class="about-img" src="images/group.jpg">
+				</div>
+				<div class="col-md-6">
+					<p class="about-text">"Today, internet is the most effective way to gain knowledge...." <br>This site is for every individual who has potential and need a platform to show the world what they have got in them. We are here to provide an opportunity to boost your confidence.<br>To show your speciality <a href="post.php" style="text-decoration: none; color: red; text-transform: uppercase;">Start Uploading</a> today!!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- our team -->
+	<div class="container team">
+		<div class="wow bounceInRight our-team pt-4">
+			<h1>OUR TEAM</h1>
+			<center><div class="underline" style="width: 100px;"></div></center><br>
+		</div>
+		<div class="row">
+			<div class="col-12 col-md-3 text-center py-4">
+				<div class="member-image m1 mx-auto">
+					
+				</div>
+				<div class="hover_3d pt-3">
+					<div class="name">
+						Devyani Chaudhari
+					</div>
+					<div class="position">
+						Full Stack Web Developer
+					</div>
+					<div>
+						<ul class="list-inline">
+						  	<li class="list-inline-item social-icons">
+						  		<a href="https://www.facebook.com/devyanichaudhari30"><i class="fab fa-facebook-square"></i></a>
+						  	</li>
+						  	<li class="list-inline-item social-icons">
+						  		<a href="mailto:devyanichaudhari08@gmail.com"><i class="far fa-envelope"></i></a>
+						  	</li>
+						  	<li class="list-inline-item social-icons">
+						  		<a href="https://www.instagram.com/devuu_c/"><i class="fab fa-instagram"></i></a>
+						  	</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-3 text-center py-4">
+				<div class="member-image m2 mx-auto">
+					
+				</div>
+				<div class="hover_3d pt-3">
+					<div class="name">
+						Sakshi Doshi
+					</div>
+					<div class="position">
+						Full Stack Web Developer
+					</div>
+					<div>
+						<ul class="list-inline">
+						  	<li class="list-inline-item social-icons">
+						  		<a href="https://www.facebook.com/sakshi.doshi.583"><i class="fab fa-facebook-square"></i></a>
+						  	</li>
+						  	<li class="list-inline-item social-icons">
+						  		<a href="mailto:sakshidoshi6@gmail.com"><i class="far fa-envelope"></i></a>
+						  	</li>
+						  	<li class="list-inline-item social-icons">
+						  		<a href="https://www.instagram.com/sakshi_doshi_16/"><i class="fab fa-instagram"></i></a>
+						  	</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-3 text-center py-4">
+				<div class="member-image m3 mx-auto">
+					
+				</div>
+				<div class="hover_3d pt-3">
+					<div class="name">
+						Rutuja Chabukswar
+					</div>
+					<div class="position">
+						Full Stack Web Developer
+					</div>
+					<div>
+						<ul class="list-inline">
+						  	<li class="list-inline-item social-icons">
+						  		<a href="https://www.facebook.com/profile.php?id=100011402910714"><i class="fab fa-facebook-square"></i></a>
+						  	</li>
+						  	<li class="list-inline-item social-icons">
+						  		<a href="mailto:chabukswarrutuja05@gmail.com"><i class="far fa-envelope"></i></a>
+						  	</li>
+						  	<li class="list-inline-item social-icons">
+						  		<a href="https://www.instagram.com/rutuja0506/"><i class="fab fa-instagram"></i></a>
+						  	</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-3 text-center py-4">
+				<div class="member-image m4 mx-auto">
+					
+				</div>
+				<div class="hover_3d pt-3">
+					<div class="name">
+						Pooja Gaikwad
+					</div>
+					<div class="position">
+						Full Stack Web Developer
+					</div>
+					<div>
+						<ul class="list-inline">
+						  	<li class="list-inline-item social-icons">
+						  		<a href="https://www.facebook.com/profile.php?id=100028164904649"><i class="fab fa-facebook-square"></i></a>
+						  	</li>
+						  	<li class="list-inline-item social-icons">
+						  		<a href="mailto:icon6523@gmail.com"><i class="far fa-envelope"></i></a>
+						  	</li>
+						  	<li class="list-inline-item social-icons">
+						  		<a href="https://www.instagram.com/icon_6523/"><i class="fab fa-instagram"></i></a>
+						  	</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- footer -->
+	<footer>
+      	<div class="container-fluid pt-5 bg-dark text-light" id="contact">
+        	<div class="container">
+          		<div class="row">
+            		<div class="col-md-5">
+              			<div class="row">
+                			<h5 class="wow fadeInRight" style="font-family: open-sans;font-weight: 800;font-size: 30px;">FUNCLUB</h5>
+              			</div>
+              			<div class="row mb-4">
+                			<div class="underline" style="width: 50px;">
+                			</div>
+              			</div>
+              			<p class="p-2" style="font-size: 16px; font-weight: bold;">'FUNCLUB' IS A PALTFORM THAT SUPPORT PEOPLE WHO HAVE TALENT AND WERE WAITING FOR THE PUSH. THE FUNCLUB IS OPEN SOURCE WHERE IT GIVES YOU AN OPPORTUNITY TO EXPRESS YOURSELF.</p>
+            		</div>
+            		<div class="col-md-5 ml-5">
+              			<div class="row">
+                			<h5 class="wow fadeInRight">FOLLOW US </h5>
+              			</div>
+              			<div class="row mb-4">
+                			<div class="underline" style="width: 50px;"></div>
+              			</div>
+              			<div class="row">
+                			<div class="media-body">
+              					<div class="text-center">
+              						<div class="text-center icon">
+					                	<a href="https://www.facebook.com/funclub.funclub.16/"><i class="fab fa-facebook-square"></i></a>
+					                	<a href="https://t.me/funclub883"><i class="fab fa-telegram"></i></a>
+					                	<a href="https://www.instagram.com/funclub5969/" target="_blank"><i class="fab fa-instagram"></i></a>
+					                	<a href="mailto:funclub883@gmail.com"><i class="far fa-envelope"></i></a>
+              						</div>
+              					</div>
+                			</div>
+              			</div>
+            		</div>
+				<hr class="w-50 pt-4">
+          		</div>
+        	</div>
+      	</div>
+      	<div class="container-fluid bg-dark header-top d-none d-md-block">
+          	<div class="row text-light pt-2 pb-2">
+            	<div class="col-md-12">
+              		<center><p class="text-center wow flipInX">© FUNCLUB 2019 - DESIGNED & MAINTAINED BY DMCE STUDENTS</p></center>
+            	</div>
+          	</div>
+        </div>
+    </footer>
+
+    <button class="open-button wow bounceInRight" id="helpBtn" onclick="openForm()"><b>HELP?</b> </button>
+
+	  	<div class="form-popup" id="myForm">
+	    	<form action="/action_page.php" class="form-container">
+			    <h3 class="heading">Leave us a message</h3>
+	      		<label for="text" style="margin-top: 20px; text-transform: uppercase;"><b>Enter your message:</b></label>
+	      		<textarea name="other" id="other" cols="30" rows="3" placeholder="Write your message..." required="" tabindex="0" style="margin-top: 10px;"> </textarea>
+		      	<a href="mailto:funclub883@gmail.com" type="submit" class="btn btn-success sendBtn" style="margin-top: 20px;">Send</a>
+		      	<button type="button" class="btn btn-danger cancel cancelBtn" onclick="closeForm()" style="margin-top: 20px;">Cancel</button>
+	    	</form>
+	  	</div>
+
+    <script>
+      // FOR HELP FUNCTION
+	    function openForm() {
+	      document.getElementById("myForm").style.display = "block";
+	    }
+
+	    function closeForm() {
+	      document.getElementById("myForm").style.display = "none";
+	    }
+
+    	//preloader
+    	var preloader = document.getElementById("loading");
+    	function myFunction(){
+    		preloader.style.display = 'none';
+    	};
+
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous"></script>
+	<script>
+
+	new WOW().init();
+
+	</script>
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
